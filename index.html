@@ -600,6 +600,161 @@
             letter-spacing: 2px;
             border-top: 1px solid #111;
         }
+
+        /* ==========================================================================
+           --- SEKRETY RESPONSYWNOŚCI (EKRANY MOBILNE DO 768px) ---
+           ========================================================================== */
+        @media (max-width: 768px) {
+            /* Korekta pływającego logo */
+            .sticky-corner-logo {
+                left: 20px;
+                top: 20px;
+            }
+
+            /* --- SEKCJA HERO --- */
+            .hero-container {
+                height: 100vh;
+            }
+
+            .content {
+                width: 100%;
+                padding: 40px 20px 30px 20px;
+                background: rgba(11, 11, 11, 0.82); /* Overlay zwiększający czytelność tekstu */
+                justify-content: space-between;
+            }
+
+            .hero-section .question {
+                font-size: 32px;
+            }
+
+            .hero-section .brand-title {
+                font-size: 56px;
+            }
+
+            .hero-section .sub-text {
+                font-size: 11px;
+                margin-bottom: 30px;
+                letter-spacing: 1px;
+            }
+
+            .neon-btn {
+                padding: 14px 30px;
+                font-size: 20px;
+                width: 100%;
+                text-align: center;
+            }
+
+            .bottom-menu {
+                flex-wrap: wrap;
+                gap: 12px 20px;
+            }
+
+            .bottom-menu a {
+                font-size: 11px;
+            }
+
+            .image-container {
+                right: 0;
+                width: 100%;
+                clip-path: none;
+                opacity: 0.35; /* Przekształcenie obrazka w klimatyczną tapetę tła */
+            }
+
+            .red-line {
+                display: none; /* Ukrycie ukośnej linii kolidującej z widokiem pionowym */
+            }
+
+            /* --- INTERAKTYWNA GALERIA --- */
+            .gallery-intro-bar {
+                padding: 60px 20px 20px 20px;
+            }
+
+            .gallery-intro-bar h2 {
+                font-size: 26px;
+            }
+
+            .gallery-sticky-container {
+                flex-direction: column; /* Zamiana układu poziomego na pionową rolkę */
+            }
+
+            .right-scroll-images {
+                width: 100%;
+                order: 1; /* Obrazki renderują się jako pierwsze */
+            }
+
+            .image-trigger-block {
+                height: 58vh; /* Wysokość dopasowana do podziału ekranu smartfona */
+                padding: 12px;
+            }
+
+            .image-frame {
+                height: 100%;
+            }
+
+            .left-sticky-panel {
+                position: sticky;
+                bottom: 0;
+                top: auto;
+                width: 100%;
+                height: 255px; /* Panel z opisem technologicznym sztywno trzyma się dołu ekranu */
+                padding: 20px;
+                clip-path: none;
+                border-right: none;
+                border-top: 3px solid #ff003c;
+                order: 2; /* Pozostaje na wierzchu podczas przewijania kadrów w tle */
+                box-shadow: 0 -12px 35px rgba(0, 0, 0, 0.95);
+            }
+
+            .car-info-box {
+                width: 100%;
+                height: 165px;
+            }
+
+            .car-details .car-name {
+                font-size: 30px;
+            }
+
+            .car-details .car-specs {
+                font-size: 11px;
+                padding-left: 10px;
+                line-height: 1.5;
+            }
+
+            .scroll-indicator {
+                margin-top: 15px;
+                justify-content: center;
+            }
+
+            /* --- POZOSTAŁE ELEMENTY --- */
+            .redsun-section {
+                padding: 50px 20px;
+            }
+
+            .redsun-title.glow-title {
+                font-size: 32px;
+                padding: 6px 15px;
+                display: block;
+                text-align: center;
+            }
+
+            .redsun-desc {
+                font-size: 12px;
+                text-align: center;
+                letter-spacing: 2px;
+            }
+
+            .share-code-box {
+                font-size: 26px;
+                display: block;
+                text-align: center;
+                width: 100%;
+                padding: 12px;
+            }
+
+            .recruitment-form {
+                padding: 25px 15px;
+            }
+        }
     </style>
 </head>
 <body>
