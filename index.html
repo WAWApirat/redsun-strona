@@ -186,14 +186,12 @@
             box-shadow: 0 0 25px #ff003c, 0 0 10px #ff003c; 
         }
 
-
-        /* --- SEKCJA 2: INTERAKTYWNA GALERIA (STYL LAMBORGHINI) --- */
+        /* --- SEKCJA 2: INTERAKTYWNA GALERIA --- */
         .scroll-gallery-wrapper {
             position: relative;
             background-color: #060606;
         }
 
-        /* Fixed logo podążające za ekranem */
         .sticky-corner-logo {
             position: fixed;
             top: 30px;  
@@ -206,14 +204,12 @@
             transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
-        /* Pokazuje logo stale podczas skrolowania galerii */
         .sticky-corner-logo.visible {
             opacity: 1;
             pointer-events: auto;
             transform: translateY(0);
         }
 
-        /* Kliknięcie natychmiast kasuje logo */
         .sticky-corner-logo.clicked {
             opacity: 0 !important;
             pointer-events: none !important;
@@ -225,7 +221,6 @@
             transform: translateY(-3px);
         }
 
-        /* Nagłówek sekcji informujący o przewijaniu */
         .gallery-intro-bar {
             background: linear-gradient(to bottom, #0b0b0b, #060606);
             padding: 120px 80px 20px 80px; 
@@ -245,13 +240,11 @@
             margin-top: 5px;
         }
 
-        /* Kontener spinający cały mechanizm scrollowania */
         .gallery-sticky-container {
             display: flex;
             position: relative;
         }
 
-        /* Lewy panel (Sticky) */
         .left-sticky-panel {
             position: sticky;
             top: 0;
@@ -268,7 +261,6 @@
             box-shadow: 10px 0 30px rgba(255, 0, 60, 0.1);
         }
 
-        /* Kontener na zmieniające się napisy aut */
         .car-info-box {
             position: relative;
             height: 250px;
@@ -318,7 +310,6 @@
             padding-left: 15px;
         }
 
-        /* Wskaźnik etapów przewijania po lewej stronie */
         .scroll-indicator {
             margin-top: 40px;
             display: flex;
@@ -335,7 +326,6 @@
             box-shadow: 0 0 10px #ff003c;
         }
 
-        /* Prawa strona */
         .right-scroll-images {
             width: 50%;
         }
@@ -384,7 +374,6 @@
             gap: 50px;
         }
 
-        /* Cały nagłówek jako jeden czerwony boks z czarnym napisem i podświetleniem */
         .redsun-title.glow-title {
             background-color: #ff003c;
             color: #000000;
@@ -474,31 +463,61 @@
             box-shadow: 0 0 15px #ff003c;
         }
 
-        .table-wrapper {
+        /* MODYFIKACJA: Zintegrowany Scroll Box dla wszystkich faz Touge */
+        .stages-scroll-box {
+            max-height: 400px; 
+            overflow-y: auto;
             overflow-x: auto;
             margin-bottom: 40px;
+            border: 1px solid #141414;
+            border-radius: 4px;
+            background: #0d0d0d;
+        }
+
+        .table-wrapper {
+            max-height: 300px; 
+            overflow-y: auto;
+            overflow-x: auto;
+            margin-bottom: 40px;
+            border: 1px solid #141414;
+            border-radius: 4px;
+            background: #0d0d0d;
+        }
+
+        /* Wspólny styl scrollbara dla tabel */
+        .stages-scroll-box::-webkit-scrollbar, .table-wrapper::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        .stages-scroll-box::-webkit-scrollbar-track, .table-wrapper::-webkit-scrollbar-track {
+            background: #0b0b0b;
+        }
+        .stages-scroll-box::-webkit-scrollbar-thumb, .table-wrapper::-webkit-scrollbar-thumb {
+            background: #ff003c;
+            border-radius: 4px;
         }
 
         .leaderboard-table {
             width: 100%;
             border-collapse: collapse;
-            background: #0d0d0d;
-            border: 1px solid #141414;
             text-align: left;
         }
 
         .leaderboard-table th {
+            position: sticky;
+            top: 0;
+            z-index: 10;
             background: #111;
             font-family: 'Bebas Neue', sans-serif;
             font-size: 20px;
             color: #ff003c;
-            padding: 15px;
+            padding: 15px 20px;
             letter-spacing: 1px;
             border-bottom: 2px solid #ff003c;
         }
 
         .leaderboard-table td {
-            padding: 15px;
+            padding: 15px 20px;
             font-size: 14px;
             border-bottom: 1px solid #141414;
             color: #aaa;
@@ -510,14 +529,12 @@
             background: #111;
         }
 
-        /* Styl podświetlenia wyszukanego wiersza */
         .leaderboard-table tr.highlight-row td {
             background: rgba(255, 0, 60, 0.25) !important;
             color: #ffffff !important;
             border-bottom: 1px solid #ff003c;
         }
 
-        /* Formularz rekrutacji */
         .recruitment-form {
             background: #0d0d0d;
             border: 1px solid #1a1a1a;
@@ -601,159 +618,25 @@
             border-top: 1px solid #111;
         }
 
-        /* ==========================================================================
-           --- SEKRETY RESPONSYWNOŚCI (EKRANY MOBILNE DO 768px) ---
-           ========================================================================== */
+        /* --- MOBILE --- */
         @media (max-width: 768px) {
-            /* Korekta pływającego logo */
-            .sticky-corner-logo {
-                left: 20px;
-                top: 20px;
-            }
-
-            /* --- SEKCJA HERO --- */
-            .hero-container {
-                height: 100vh;
-            }
-
-            .content {
-                width: 100%;
-                padding: 40px 20px 30px 20px;
-                background: rgba(11, 11, 11, 0.82); /* Overlay zwiększający czytelność tekstu */
-                justify-content: space-between;
-            }
-
-            .hero-section .question {
-                font-size: 32px;
-            }
-
-            .hero-section .brand-title {
-                font-size: 56px;
-            }
-
-            .hero-section .sub-text {
-                font-size: 11px;
-                margin-bottom: 30px;
-                letter-spacing: 1px;
-            }
-
-            .neon-btn {
-                padding: 14px 30px;
-                font-size: 20px;
-                width: 100%;
-                text-align: center;
-            }
-
-            .bottom-menu {
-                flex-wrap: wrap;
-                gap: 12px 20px;
-            }
-
-            .bottom-menu a {
-                font-size: 11px;
-            }
-
-            .image-container {
-                right: 0;
-                width: 100%;
-                clip-path: none;
-                opacity: 0.35; /* Przekształcenie obrazka w klimatyczną tapetę tła */
-            }
-
-            .red-line {
-                display: none; /* Ukrycie ukośnej linii kolidującej z widokiem pionowym */
-            }
-
-            /* --- INTERAKTYWNA GALERIA --- */
-            .gallery-intro-bar {
-                padding: 60px 20px 20px 20px;
-            }
-
-            .gallery-intro-bar h2 {
-                font-size: 26px;
-            }
-
-            .gallery-sticky-container {
-                flex-direction: column; /* Zamiana układu poziomego na pionową rolkę */
-            }
-
-            .right-scroll-images {
-                width: 100%;
-                order: 1; /* Obrazki renderują się jako pierwsze */
-            }
-
-            .image-trigger-block {
-                height: 58vh; /* Wysokość dopasowana do podziału ekranu smartfona */
-                padding: 12px;
-            }
-
-            .image-frame {
-                height: 100%;
-            }
-
-            .left-sticky-panel {
-                position: sticky;
-                bottom: 0;
-                top: auto;
-                width: 100%;
-                height: 255px; /* Panel z opisem technologicznym sztywno trzyma się dołu ekranu */
-                padding: 20px;
-                clip-path: none;
-                border-right: none;
-                border-top: 3px solid #ff003c;
-                order: 2; /* Pozostaje na wierzchu podczas przewijania kadrów w tle */
-                box-shadow: 0 -12px 35px rgba(0, 0, 0, 0.95);
-            }
-
-            .car-info-box {
-                width: 100%;
-                height: 165px;
-            }
-
-            .car-details .car-name {
-                font-size: 30px;
-            }
-
-            .car-details .car-specs {
-                font-size: 11px;
-                padding-left: 10px;
-                line-height: 1.5;
-            }
-
-            .scroll-indicator {
-                margin-top: 15px;
-                justify-content: center;
-            }
-
-            /* --- POZOSTAŁE ELEMENTY --- */
-            .redsun-section {
-                padding: 50px 20px;
-            }
-
-            .redsun-title.glow-title {
-                font-size: 32px;
-                padding: 6px 15px;
-                display: block;
-                text-align: center;
-            }
-
-            .redsun-desc {
-                font-size: 12px;
-                text-align: center;
-                letter-spacing: 2px;
-            }
-
-            .share-code-box {
-                font-size: 26px;
-                display: block;
-                text-align: center;
-                width: 100%;
-                padding: 12px;
-            }
-
-            .recruitment-form {
-                padding: 25px 15px;
-            }
+            .sticky-corner-logo { left: 20px; top: 20px; }
+            .hero-container { height: 100vh; }
+            .content { width: 100%; padding: 40px 20px 30px 20px; background: rgba(11, 11, 11, 0.82); }
+            .hero-section .question { font-size: 32px; }
+            .hero-section .brand-title { font-size: 56px; }
+            .neon-btn { padding: 14px 30px; font-size: 20px; width: 100%; text-align: center; }
+            .bottom-menu { flex-wrap: wrap; gap: 12px 20px; }
+            .image-container { right: 0; width: 100%; clip-path: none; opacity: 0.35; }
+            .red-line { display: none; }
+            .gallery-intro-bar { padding: 60px 20px 20px 20px; }
+            .gallery-sticky-container { flex-direction: column; }
+            .right-scroll-images { width: 100%; order: 1; }
+            .image-trigger-block { height: 58vh; padding: 12px; }
+            .left-sticky-panel { position: sticky; bottom: 0; top: auto; width: 100%; height: 255px; padding: 20px; clip-path: none; border-right: none; border-top: 3px solid #ff003c; order: 2; box-shadow: 0 -12px 35px rgba(0, 0, 0, 0.95); }
+            .car-info-box { width: 100%; height: 165px; }
+            .redsun-section { padding: 50px 20px; }
+            .redsun-title.glow-title { font-size: 32px; padding: 6px 15px; display: block; text-align: center; }
         }
     </style>
 </head>
@@ -962,9 +845,12 @@
                     <button class="search-btn" onclick="executeSearch()">Search</button>
                 </div>
 
-                <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 26px; color: #fff; margin-bottom: 15px; letter-spacing: 1px;">⛰️ Touge Stage Rankings</h3>
-                <div class="table-wrapper">
-                    <table class="leaderboard-table" id="touge-table">
+                <!-- NOWY WSPÓLNY SCROLL-BOX DLA FAZ TOUGE -->
+                <div class="stages-scroll-box" id="touge-stages-container">
+                    
+                    <!-- TOUGE STAGE 2 (HAKONE) -->
+                    <h3 style="padding: 20px 20px 0 20px; font-family: 'Bebas Neue', sans-serif; font-size: 26px; color: #fff; margin-bottom: 15px; letter-spacing: 1px;">⛰️ TOUGE STAGE RANKINGS (HAKONE NANAMAGARI)</h3>
+                    <table class="leaderboard-table" style="margin-bottom: 20px;">
                         <thead>
                             <tr>
                                 <th>Rank</th>
@@ -976,7 +862,34 @@
                         <tbody>
                             <tr>
                                 <td style="color: #ff003c; font-weight: 900;">#01</td>
-                                <td class="driver-name" style="color: #fff; font-weight: 700;">WAWAPirat</td>
+                                <td class="driver-name" style="color: #fff; font-weight: 700;">WAWApirat</td>
+                                <td>Mazda RX-7 '92 (A 640)</td>
+                                <td style="color: #ff003c; font-weight: 700;">01:47.291</td>
+                            </tr>
+                            <tr>
+                                <td style="color: #444; font-weight: 700;">#02</td>
+                                <td class="driver-name">EMCTR2727</td>
+                                <td>Nissan Skyline '97 (B 571)</td>
+                                <td>01:50.853</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!-- TOUGE STAGE 1 (STARE WYNIKI) -->
+                    <h3 style="padding: 20px 20px 0 20px; font-family: 'Bebas Neue', sans-serif; font-size: 26px; color: #fff; margin-bottom: 15px; letter-spacing: 1px; border-top: 1px dashed #222;">⛰️ TOUGE STAGE RANKINGS</h3>
+                    <table class="leaderboard-table" style="margin-bottom: 10px;">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Driver</th>
+                                <th>Car Build</th>
+                                <th>Best Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="color: #ff003c; font-weight: 900;">#01</td>
+                                <td class="driver-name" style="color: #fff; font-weight: 700;">WAWApirat</td>
                                 <td>Toyota Trueno (B560)</td>
                                 <td style="color: #ff003c; font-weight: 700;">03:58,743</td>
                             </tr>
@@ -988,9 +901,10 @@
                             </tr>
                         </tbody>
                     </table>
-                </div>
 
-                <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 26px; color: #fff; margin-bottom: 15px; letter-spacing: 1px;">🏎️ Grip Circuit Rankings</h3>
+                </div> <!-- ZAKOŃCZENIE SCROLL-BOXA TOUGE -->
+
+                <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 26px; color: #fff; margin-bottom: 15px; letter-spacing: 1px;">🏎️ Grip Circuit Rankings (Electric Town)</h3>
                 <div class="table-wrapper">
                     <table class="leaderboard-table" id="grip-table">
                         <thead>
@@ -1004,9 +918,21 @@
                         <tbody>
                             <tr>
                                 <td style="color: #ff003c; font-weight: 900;">#01</td>
-                                <td class="driver-name" style="color: #fff; font-weight: 700;">XX</td>
-                                <td>XX</td>
-                                <td style="color: #ff003c; font-weight: 700;">XX</td>
+                                <td class="driver-name" style="color: #fff; font-weight: 700;">WAWApirat</td>
+                                <td>Mazda MX-5 RF (A 667)</td>
+                                <td style="color: #ff003c; font-weight: 700;">04:06.996</td>
+                            </tr>
+                            <tr>
+                                <td style="color: #444; font-weight: 700;">#02</td>
+                                <td class="driver-name">EMCTR2727</td>
+                                <td>Mazda MX-5 RF (A 667)</td>
+                                <td>04:13.136</td>
+                            </tr>
+                            <tr>
+                                <td style="color: #444; font-weight: 700;">#03</td>
+                                <td class="driver-name">MBA6644</td>
+                                <td>Mazda MX-5 RF (A 667)</td>
+                                <td>04:34.611</td>
                             </tr>
                         </tbody>
                     </table>
@@ -1111,13 +1037,12 @@
             }
         });
 
-        /* SKRYPT LOGIKI WYSZUKIWARKI W TABELACH */
+        /* ZMODYFIKOWANA WYSZUKIWARKA (wspiera scrollowanie wewnątrz boxów) */
         function executeSearch() {
             const query = document.getElementById('gamertag-search').value.trim().toUpperCase();
             const allRows = document.querySelectorAll('.leaderboard-table tbody tr');
             let matchFound = false;
 
-            // Czyszczenie poprzednich podświetleń
             allRows.forEach(row => row.classList.remove('highlight-row'));
 
             if (query === '') {
@@ -1125,7 +1050,6 @@
                 return;
             }
 
-            // Przeszukiwanie wierszy pod kątem wpisanej nazwy
             allRows.forEach(row => {
                 const driverCell = row.querySelector('.driver-name');
                 if (driverCell && driverCell.textContent.trim().toUpperCase() === query) {
@@ -1135,17 +1059,18 @@
             });
 
             if (matchFound) {
-                // Płynny skok do pierwszej tabeli z wynikami
-                document.getElementById('touge-table').scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'center'
-                });
+                const firstHighlight = document.querySelector('.highlight-row');
+                if (firstHighlight) {
+                    firstHighlight.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center'
+                    });
+                }
             } else {
                 alert(`Driver "${query}" not found in current rankings.`);
             }
         }
 
-        // Pozwala na zatwierdzanie wyszukiwania klawiszem Enter
         document.getElementById('gamertag-search').addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
                 executeSearch();
