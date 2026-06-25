@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RED SUN CLUB | Official Media & Showcase</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     
+    <!-- Ikona w head -->
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/xCT8VpFJ/3e1d6477-48ec-4565-9cf2-a20ee08f11d3.png">
+
     <style>
         /* RESET I PODSTAWY STRONY */
         * {
@@ -34,14 +38,14 @@
             transition: transform 0.3s ease; 
         }
 
-        .logo .red-box {
-            background-color: #ff003c;
-            color: #000000;
-            padding: 5px 12px;
-            border-radius: 7px; 
-            display: inline-block;
-            font-weight: 900;
+        /* NOWY STYL: Twoje zdjęcie docięte w idealne kółko z neonowym blaskiem */
+        .logo-img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%; /* Ta linijka robi idealne kółko */
+            object-fit: cover; /* Pilnuje, żeby zdjęcie się nie zdeformowało */
             margin-right: 12px;
+            border: 2px solid #ff003c;
             box-shadow: 0 0 18px #ff003c, 0 0 35px rgba(255, 0, 60, 0.5);
         }
 
@@ -462,7 +466,6 @@
             box-shadow: 0 0 15px #ff003c;
         }
 
-        /* MODYFIKACJA: Zintegrowany Scroll Box dla wszystkich faz Touge */
         .stages-scroll-box {
             max-height: 400px; 
             overflow-y: auto;
@@ -483,7 +486,6 @@
             background: #0d0d0d;
         }
 
-        /* Wspólny styl scrollbara dla tabel */
         .stages-scroll-box::-webkit-scrollbar, .table-wrapper::-webkit-scrollbar {
             width: 8px;
             height: 8px;
@@ -641,19 +643,21 @@
 </head>
 <body>
 
+    <!-- Zaktualizowane pływające logo z Twoją grafiką dociętą w kółko -->
     <a href="#home" class="sticky-corner-logo" id="back-to-top">
         <div class="logo">
-            <span class="red-box">RED</span>
-            <span class="sun-text">SUN</span>
+            <img src="https://i.postimg.cc/xCT8VpFJ/3e1d6477-48ec-4565-9cf2-a20ee08f11d3.png" class="logo-img" alt="Logo">
+            <span class="sun-text">RED SUN</span>
         </div>
     </a>
 
     <div class="hero-container" id="home">
         <div class="content">
+            <!-- Zaktualizowane główne logo z Twoją grafiką dociętą w kółko -->
             <a href="#" class="logo-link">
                 <div class="logo">
-                    <span class="red-box">RED</span>
-                    <span class="sun-text">SUN</span>
+                    <img src="https://i.postimg.cc/xCT8VpFJ/3e1d6477-48ec-4565-9cf2-a20ee08f11d3.png" class="logo-img" alt="Logo">
+                    <span class="sun-text">RED SUN</span>
                 </div>
             </a>
 
@@ -844,11 +848,10 @@
                     <button class="search-btn" onclick="executeSearch()">Search</button>
                 </div>
 
-                <h3 style="padding: 20px 0 0 0; font-family: 'Bebas Neue', sans-serif; font-size: 26px; color: #fff; margin-bottom: 15px; letter-spacing: 1px;">⛰️ TOUGE STAGE RANKINGS</h3>
-
                 <div class="stages-scroll-box" id="touge-stages-container">
                     
-                    <h3 style="padding: 20px 20px 0 20px; font-family: 'Bebas Neue', sans-serif; font-size: 26px; color: #fff; margin-bottom: 15px; letter-spacing: 1px;">HAKONE NANAMAGARI</h3>
+                    <!-- TOUGE STAGE 2 (HAKONE) -->
+                    <h3 style="padding: 20px 20px 0 20px; font-family: 'Bebas Neue', sans-serif; font-size: 26px; color: #fff; margin-bottom: 15px; letter-spacing: 1px;">⛰️ TOUGE STAGE RANKINGS (HAKONE NANAMAGARI)</h3>
                     <table class="leaderboard-table" style="margin-bottom: 20px;">
                         <thead>
                             <tr>
@@ -874,7 +877,8 @@
                         </tbody>
                     </table>
 
-                    <h3 style="padding: 20px 20px 0 20px; font-family: 'Bebas Neue', sans-serif; font-size: 26px; color: #fff; margin-bottom: 15px; letter-spacing: 1px; border-top: 1px dashed #222;">Mount Haruna</h3>
+                    <!-- TOUGE STAGE 1 -->
+                    <h3 style="padding: 20px 20px 0 20px; font-family: 'Bebas Neue', sans-serif; font-size: 26px; color: #fff; margin-bottom: 15px; letter-spacing: 1px; border-top: 1px dashed #222;">⛰️ TOUGE STAGE RANKINGS</h3>
                     <table class="leaderboard-table" style="margin-bottom: 10px;">
                         <thead>
                             <tr>
@@ -900,7 +904,9 @@
                         </tbody>
                     </table>
 
-                </div> <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 26px; color: #fff; margin-bottom: 15px; letter-spacing: 1px;">🏎️ Grip Circuit Rankings (Electric Town)</h3>
+                </div>
+
+                <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 26px; color: #fff; margin-bottom: 15px; letter-spacing: 1px;">🏎️ Grip Circuit Rankings (Electric Town)</h3>
                 <div class="table-wrapper">
                     <table class="leaderboard-table" id="grip-table">
                         <thead>
@@ -943,7 +949,7 @@
         <div class="redsun-grid">
             <div>
                 <h2 class="redsun-title">[ Recruitment Form ]</h2>
-                <div class="redsun-desc">Why do you want to become a Discord Server Administrator?</div>
+                <div class="redsun-desc">Apply to join the elite crew</div>
 
                 <form class="recruitment-form" action="https://formspree.io/f/xvznlpyw" method="POST">
                     <div class="form-grid">
@@ -1033,7 +1039,6 @@
             }
         });
 
-        /* ZMODYFIKOWANA WYSZUKIWARKA (wspiera scrollowanie wewnątrz boxów) */
         function executeSearch() {
             const query = document.getElementById('gamertag-search').value.trim().toUpperCase();
             const allRows = document.querySelectorAll('.leaderboard-table tbody tr');
